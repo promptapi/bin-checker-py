@@ -5,9 +5,6 @@ import os
 from http import HTTPStatus
 
 import requests
-from console import console
-
-console = console(source=__name__)
 
 
 def get_bin(bin_number, timeout=5):
@@ -46,7 +43,6 @@ def get_bin(bin_number, timeout=5):
         return dict(error=result.get('message', http_error))
 
     if response.status_code != HTTPStatus.OK.value:
-        console(result)
         return dict(
             error=result.get('message', response.reason), status=response.status_code
         )

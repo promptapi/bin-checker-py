@@ -4,11 +4,7 @@ import os
 import unittest
 from collections import namedtuple
 
-from console import console
-
 from bin_checker import get_bin
-
-console = console(source=__name__)
 
 EXISTING_PROMPTAPI_TOKEN = os.environ.get('PROMPTAPI_TOKEN', None)
 
@@ -31,7 +27,6 @@ class TestSimple(unittest.TestCase):
         bin_information = get_bin('302596')
         if bin_information.get('error', False):
             result = namedtuple('result', bin_information.keys())(**bin_information)
-            console('bin_information', bin_information)
 
             self.assertEqual(result.bank_name, 'Diners Club International')
             self.assertEqual(result.country, 'United States Of America')
