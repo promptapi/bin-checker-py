@@ -1,6 +1,7 @@
 # pylint: disable=R0201,E1101
 
 import os
+import sys
 import unittest
 from collections import namedtuple
 
@@ -25,7 +26,10 @@ class TestSimple(unittest.TestCase):
         os.environ['PROMPTAPI_TOKEN'] = EXISTING_PROMPTAPI_TOKEN
 
         bin_information = get_bin('302596')
+
         if bin_information.get('error', False):
+            sys.stdout.write(bin_information.get('error'))
+        else:
             result = namedtuple('result', bin_information.keys())(**bin_information)
 
             self.assertEqual(result.bank_name, 'Diners Club International')
