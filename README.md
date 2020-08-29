@@ -98,7 +98,13 @@ All PR’s are welcome!
 1. `push` your `branch` (`git push origin my-feature`)
 1. Than create a new **Pull Request**!
 
+This project is intended to be a safe,
+welcoming space for collaboration, and contributors are expected to adhere to
+the [code of conduct][coc].
+
+
 ---
 
 [bincheck-api]:     https://promptapi.com/marketplace/docs/bincheck-api
 [promptapi-signup]: https://promptapi.com/#signup-form
+[coc]:              https://github.com/promptapi/bin-checker-py/blob/main/CODE_OF_CONDUCT.md
