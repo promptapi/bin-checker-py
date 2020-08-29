@@ -1,5 +1,5 @@
 ![Python](https://img.shields.io/badge/python-3.7.4-green.svg)
-![Version](https://img.shields.io/badge/version-0.0.3-orange.svg)
+![Version](https://img.shields.io/badge/version-0.0.4-orange.svg)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
 # Prompt API - BIN Checker - Python Package
