@@ -72,8 +72,67 @@ rake upload:main     # Upload package to main distro (release)
 rake upload:test     # Upload package to test distro
 ```
 
+You need `ruby` to run rake tasks. Rake tasks are just helper functions for
+automation. You don’t need to install anything to proceed. If you are on
+macOS, you’ll already have ruby installed.
+
+If you are on Ubuntu:
+
+```bash
+# install ruby on Ubuntu
+$ sudo apt-get update -y
+$ sudo apt-get install -y ruby-full
+```
+
+You need `bumpversion` to manage package versioning. If you are on
+macOS:
+
+```bash
+$ brew install bumpversion
+```
+
+If you are on Ubuntu:
+
+```bash
+# install bumpversion on Ubuntu
+$ sudo apt-get update -y
+$ sudo apt-get -y bumpversion
+```
+
 To install and test package locally, just call `rake` or `rake install`.
 Tests are available under `tests/` folder. Run `rake test` to run tests.
+
+To continue without `ruby` or `rake`:
+
+- Install package locally: `pip install -e .[development]`
+- Build package: `python setup.py sdist bdist_wheel`
+- Install `bumpversion`: `pip install bumpversion`
+
+For uploading package to **pypi** registry you need to install:
+
+```bash
+$ pip install -U wheel setuptools
+```
+
+You need to put pypi credentials to `~/.pypirc`:
+
+    [distutils]
+    index-servers=
+        pypi-promptapi
+        testpypi-promptapi
+    
+    [pypi-promptapi]
+    repository = https://upload.pypi.org/legacy/
+    username: __token__
+    password: TOKEN
+    
+    [testpypi-promptapi]
+    repository: https://test.pypi.org/legacy/
+    username: __token__
+    password: TOKEN
+
+- Upload to main registry: `twine upload --repository pypi-promptapi dist/*`
+- Upload to test repository: `twine upload --repository testpypi-promptapi dist/*`
 
 ---
 
