@@ -7,7 +7,7 @@ LONG_DESCRIPTION = (CURRENT_WORKING_DIRECTORY / 'README.md').read_text(encoding=
 
 setup(
     name='pa-bin-checker',
-    version='0.0.5',
+    version='0.0.6',
     description="Python wrapper for Prompt API's BIN Checker API",
     long_description=LONG_DESCRIPTION,
     long_description_content_type='text/markdown',
