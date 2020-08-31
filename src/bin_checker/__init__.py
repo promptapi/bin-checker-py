@@ -1,3 +1,3 @@
-__version__ = '0.0.6'
+__version__ = '0.1.0'
 
 from .bin_checker import get_bin  # noqa: F401
